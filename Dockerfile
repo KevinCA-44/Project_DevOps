@@ -10,4 +10,4 @@ RUN npm install
 
 ENTRYPOINT ["npm", "run", "start"]
 
-RUN npm run test 
+RUN npm run test
