@@ -22,7 +22,6 @@ jobs:
           -Dsonar.organization=kevinca-44
           -Dsonar.projectKey=KevinCA-44_Project_DevOps
           -Dsonar.python.coverage.reportPaths=coverage.xml
-          -Dsonar.tests=tests/
           -Dsonar.verbose=true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
