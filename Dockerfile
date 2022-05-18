@@ -1,4 +1,4 @@
-FROM node:14.16.1-stretch-slim
+FROM node:14.19.2-stretch-slim
 
 COPY . /app
 
