@@ -1,0 +1,13 @@
+name: deploiement en preproduction
+
+on:
+  push:
+    branches: docker
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: staging
+    needs: build
+    steps:
+      - name: deploy

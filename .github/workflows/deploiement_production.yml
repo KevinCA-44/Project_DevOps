@@ -1,0 +1,24 @@
+name: deploiement en production
+
+concurrency: production
+
+on: pull_request
+    branches: main
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    needs: build
+    steps:
+      - name: deploy
+
+  notify:
+      name: Discord notification
+      runs-on: ubuntu-latest
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      steps:
+        - uses: Ilshidur/action-discord@master
+          with:
+            args: 'The project has been correctly deployed'
