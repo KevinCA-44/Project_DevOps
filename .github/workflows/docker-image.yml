@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag devopstp
+      run: docker build . --file Dockerfile --tag devopstp && docker push weydocker/devopstp:devopstp
 
   trivy:
     runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'devopstp:latest'
+          image-ref: 'https://hub.docker.com/repository/docker/weydocker/devopstp:devopstp'
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
