@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag devopstp && docker push weydocker/devopstp:devopstp
+      run: docker build . --file Dockerfile --tag devopstp && docker push devopstp weydocker/devopstp:devopstp
 
   trivy:
     runs-on: ubuntu-latest
