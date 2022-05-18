@@ -18,7 +18,7 @@ jobs:
           npm run test --coverage
       - name: Fix code coverage paths
         working-directory: ./coverage
-        run: sed -i 's//home/runner/work/Project_DevOps/Project_DevOps///github/workspace//g' lcov.info
+        run: sed -i '/home/runner/work/Project_DevOps/Project_DevOps///github/workspace//g' lcov.info
       - name: Analyze with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
         env:
