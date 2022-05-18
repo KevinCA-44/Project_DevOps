@@ -24,15 +24,15 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'
+          hide-progress: false
           ignore-unfixed: true
           format: 'table'
           output: 'trivy-results.txt'
           severity: 'CRITICAL'
           exit-code: '1'
-
-      - name: "upload build artifacts"
-        if: always()
+      - if: always()
+        name: "upload build artifacts"
         uses: actions/upload-artifact@v2
         with:
-          name: artifact
-          path: /tmp
+          name: artifact report
+          path: trivy-results.txt
