@@ -20,7 +20,7 @@ jobs:
       #   working-directory: ./coverage
       #   run: sed -i '/home/runner/work/Project_DevOps/Project_DevOps///github/workspace//g' lcov.info
       - name: Analyze with SonarCloud
-        uses: sonarsource/sonarcloud-github-action@master
+        uses: sonarsource/sonarcloud-github-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
