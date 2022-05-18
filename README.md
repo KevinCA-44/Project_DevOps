@@ -1,12 +1,11 @@
 # project_DevOps
 
-first : clone the project
+Intérêts des tests unitaires : Cela permet de tester le bon fonctionnement du code.
 
-second : cd project_DevOps puis npm i
+Difficultés rencontrés : 
+- Impossibilité de stocker l'image Docker, donc impossibilité de la récupérer, donc impossibilité de la push sur un repository Docker -> Impossibilité de la manipuler
+- Sans aucun support, très difficile d'avancer dans un TP.
 
-thrid : launch test unit with npm run test 
 
-
-AIDE POUR GITHUB : https://github.blog/2022-02-02-build-ci-cd-pipeline-github-actions-four-steps/
-
-AIDE POUR GITLAB : https://blog.eleven-labs.com/fr/introduction-gitlab-ci/ 
+Pour la notification Discord (WEBHOOK) :
+https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks

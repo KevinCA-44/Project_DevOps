@@ -9,11 +9,17 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: production
     needs: build
     steps:
       - name: deploy
-      - run: npm i
+      - uses: actions/checkout@v3
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+        #le token et l'URL sont à titre indicatif, car nous ne possédons pas de serveur pour le faire tourner.
+          token: "${{ github.token }}"
+          target_url: http://my-app-prod.com
+          environment: production
 
   notify:
       name: Discord notification
